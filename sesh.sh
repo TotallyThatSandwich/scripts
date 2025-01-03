@@ -26,4 +26,8 @@ if [ $? != 0 ]; then
   tmux select-window -t $SESH:editor
 fi
 
-tmux attach-session -t $SESH
+if [[ -n "$TMUX" ]]; then
+
+else
+  tmux attach-session -t $SESH
+fi
